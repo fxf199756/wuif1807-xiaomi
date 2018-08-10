@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-08-05 12:07:19
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-08-08 08:50:40
+* @Last Modified time: 2018-08-10 09:22:21
 */
 *{
 	margin: 0;
@@ -1218,11 +1218,12 @@ input:focus{
 .footer .container .center .left dl dd{
 	font-size: 12px;
 	margin-bottom: 15px;
+	width: 64px;
 }
-.footer .container .center .left dl dd:hover a{
+.footer .container .center .left dl dd:hover{
 	color: #ff6700;
 }
-.footer .container .center .left dl dd a{
+.footer .container .center .left dl dd{
 	color: #757575;
 }
 .footer .container .center .right{
