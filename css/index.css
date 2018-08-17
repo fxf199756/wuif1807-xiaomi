@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2018-08-05 12:07:19
 * @Last Modified by:   Administrator
-* @Last Modified time: 2018-08-10 09:22:21
+* @Last Modified time: 2018-08-17 01:38:13
 */
 *{
 	margin: 0;
@@ -611,6 +611,19 @@ input:focus{
 	text-align: center;
 	margin: 0 10px 13px 0;
 	transition: transform .5s;
+	position: relative;
+}
+.cut{
+	width: 64px;
+	height:21px;
+	background-color: #E53935;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	position: absolute;
+	top: 0;
+	left: 85px;
 }
 .phone .container .bottom ul li:hover{
 	transform: translateY(-3px);
@@ -717,10 +730,44 @@ input:focus{
 	text-align: center;
 	margin: 0 0 14px 14px;
 	transition: transform .5s;
+	overflow: hidden;
 }
 .elec .container .bottom ul li:hover{
 	transform: translateY(-3px);
 	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.elec .container .bottom ul li .orange{
+	width: 100%;
+	height: 76px;
+	background: #FF6700;
+	margin-top: 88px;
+	transition: all .8s;
+}
+.elec .container .bottom ul li:hover .orange{
+	transform: translateY(-132.5px);
+}
+.elec .container .bottom ul li .orange p{
+	margin-bottom: 5px;
+    color: #fff;
+    font-size: 12px;
+    text-align: left;
+    margin:0 29px;
+    padding-top: 10px;
+    display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.elec .container .bottom ul li .orange span{
+    color: rgba(255,255,255,0.6);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ /*    overflow: hidden;
+    display: block; */
+    font-size: 12px;
+	padding-top: 12px; 
+  	margin-left: 29px; 
 }
 .elec .container .bottom ul li:nth-child(1){
 	background-image: url('../img/24.jpg');
@@ -986,6 +1033,49 @@ input:focus{
 	background: white;
 	float: left;
 	text-align: center;
+	position: relative;
+}
+.main .container .bottom ul li .left{
+	width: 20px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	background-color: #E3E3E3;
+	position: absolute;
+	left: 0;
+	top: 191px;
+	display: none;
+}
+.main .container .bottom ul li .left i{
+	color: white;
+}
+.main .container .bottom ul li .right{
+	width: 20px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	background-color: #E3E3E3;
+	position: absolute;
+	right: 0;
+	top: 191px;
+	display: none;
+}
+.main .container .bottom ul li .right i{
+	color: white;
+}
+.main .container .bottom ul li:hover .left{
+	display: inline;
+}
+.main .container .bottom ul li:hover .right{
+	display: inline;
+}
+.main .container .bottom ul li .left:hover{
+	background-color: #8D8D8D;
+}
+.main .container .bottom ul li .right:hover{
+	background-color: #8D8D8D;
 }
 .main .container .bottom ul li{
 	border-top: 1px solid #FFAC13;
@@ -1334,3 +1424,33 @@ input:focus{
 	width: 267px;
 	height: 19px;
 }
+/* 固定栏开始 */
+.sort{
+	width: 27px;
+	height: 176px;
+	position: fixed;
+	bottom: 68px;
+	right: 37px;
+}
+.sort ul{
+	width: 27px;
+	height: 121px;
+}
+.sort ul li{
+	width: 27px;
+	height: 40px;
+	background: #fff;
+	border:1px solid #F5F5F5 ;
+	text-align: center;
+	line-height: 40px;
+	color: #757575;
+	cursor: pointer;
+	font-weight: bold;
+}
+.sort ul li:nth-child(4){
+	margin-top: 15px;
+}
+.sort ul li:hover{
+	color: #ff6670;
+}
+/* 固定栏结束 */
