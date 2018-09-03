@@ -270,10 +270,37 @@ input:focus{
 	width: 1225px;
 	height: 460px;
 	margin: 0 auto 0 auto;
-	background-image: url('../img/4.jpg');
+	position: relative;
+	overflow: hidden;
+}
+.banner .imges{
+	width: 1225px;
+	height: 460px;
+	background-image: url('../img/banner1.jpg');
 	background-size: cover;
 	background-position: right;
-	position: relative;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+	opacity: 1;
+	transition: all.6s;
+}
+.banner .imges:nth-child(2){
+	background-image: url('../img/4.jpg');
+	opacity:0;
+}
+.banner .imges:nth-child(3){
+	background-image: url('../img/banner3.jpg');
+	opacity:0;
+}
+.banner .imges:nth-child(4){
+	background-image: url('../img/banner4.jpg');
+	opacity:0;
+}
+.banner .imges:nth-child(5){
+	background-image: url('../img/banner5.jpg');
+	opacity:0;
 }
 .banner .container .left{
 	width: 40px;
@@ -283,6 +310,7 @@ input:focus{
 	position: absolute;
 	bottom: 215px;
 	left: 234px;
+	z-index: 999;
 }
 .banner .container .left:hover{
 	background-position: 0 0;
@@ -295,37 +323,50 @@ input:focus{
 	position: absolute;
 	bottom: 215px;
 	right: 0px;
+	z-index: 999;
 }
 .banner .container .right:hover{
 	background-position: -44px 0;
 }
 .banner .container .circle{
-	width: 81px;
+	width: 94px;
 	height: 20px;
 	position: absolute;
 	right: 28px;
 	bottom: 21px;
+	z-index: 999;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
 }
-.banner .container .circle .dot{
+.banner .container  .circle .dots{
+	background: none;
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
-	float: left;
-	margin-right: 10px;
+	border: 2px solid #B7B4B1;
+}
+.banner .container .circle li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
 	background: #97938F;
 	border: 2px solid #B7B4B1;
 }
-.banner .container .circle .dot:hover{
-	background: none;
-}
-.banner .container .circle .dot:nth-child(2){
+.banner .container  .circle li:hover{
 	background: none;
 }
 .banner .container .table{
 	width: 234px;
 	height: 100%;
 	background: #625F59;
-	position: relative;	
+	position: relative;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
 }
 .banner .container .table ul li{
 	width: 234px;
@@ -1034,6 +1075,39 @@ input:focus{
 	float: left;
 	text-align: center;
 	position: relative;
+	overflow: hidden;
+}
+.main .container .bottom ul .first .contact_1{
+	width: 100%;
+	height: 266px;
+	position: absolute;
+	top: 70px;
+	left: 296px;
+	z-index: 1;
+}
+.main .container .bottom ul .second .contact_1{
+	width: 100%;
+	height: 266px;
+	position: absolute;
+	top: 70px;
+	left: 296px;
+	z-index: 1;
+}
+.main .container .bottom ul .third .contact_1{
+	width: 100%;
+	height: 266px;
+	position: absolute;
+	top: 70px;
+	left: 296px;
+	z-index: 1;
+}
+.main .container .bottom ul .fourth .contact_1{
+	width: 100%;
+	height: 266px;
+	position: absolute;
+	top: 70px;
+	left: 296px;
+	z-index: 1;
 }
 .main .container .bottom ul li .left{
 	width: 20px;
@@ -1045,6 +1119,7 @@ input:focus{
 	position: absolute;
 	left: 0;
 	top: 191px;
+	z-index: 999;
 	display: none;
 }
 .main .container .bottom ul li .left i{
@@ -1060,6 +1135,7 @@ input:focus{
 	position: absolute;
 	right: 0;
 	top: 191px;
+	z-index: 999;
 	display: none;
 }
 .main .container .bottom ul li .right i{
@@ -1131,6 +1207,7 @@ input:focus{
 	position: absolute;
 	bottom: 18px;
 	left: 106px;
+	z-index: 999;
 }
 .main .container .bottom ul .first .dot{
 	width: 89px;
@@ -1140,14 +1217,20 @@ input:focus{
 	left: 118px;
 }
 .main .container .bottom ul li .dot .circle{
-	width: 8px;
-	height: 8px;
+	width: 10px;
+	height:10px;
 	border-radius: 50%;
 	float: left;
 	margin-right: 15px;
 	background: #B0B0B0;
+	border: 2px solid white;
 }
-.main .container .bottom ul li .dot .circle:nth-child(1){
+.main .container .bottom ul li .dot .circles{
+	width: 10px;
+	height:10px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 15px;
 	border: 2px solid #FF6700;
 	background: none;
 }
