@@ -124,18 +124,9 @@ span{
 	right: 0;
 	z-index: 99;
 	background: white;
-	opacity: 0;
 	transition:all .5s;
 	overflow: hidden;
-}
-.title .container .right .shop:hover .none{
-	height: 100px;
-	opacity: 1;
-	box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-}
-.title .container .right .shop:hover{
-	background:white;
-	color: #ff6700;
+	box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
 .header{
 	width: 100%;
@@ -271,7 +262,6 @@ input:focus{
 	height: 460px;
 	margin: 0 auto 0 auto;
 	position: relative;
-	overflow: hidden;
 }
 .banner .imges{
 	width: 1225px;
@@ -310,7 +300,7 @@ input:focus{
 	position: absolute;
 	bottom: 215px;
 	left: 234px;
-	z-index: 999;
+	z-index: 9;
 }
 .banner .container .left:hover{
 	background-position: 0 0;
@@ -323,7 +313,7 @@ input:focus{
 	position: absolute;
 	bottom: 215px;
 	right: 0px;
-	z-index: 999;
+	z-index: 9;
 }
 .banner .container .right:hover{
 	background-position: -44px 0;
@@ -334,7 +324,7 @@ input:focus{
 	position: absolute;
 	right: 28px;
 	bottom: 21px;
-	z-index: 999;
+	z-index: 9;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
@@ -361,39 +351,64 @@ input:focus{
 	width: 234px;
 	height: 100%;
 	background: #625F59;
-	position: relative;
-	overflow: hidden;
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: 999;
 }
-.banner .container .table ul li{
+.banner .container .table .list .list_1{
 	width: 234px;
 	height: 41px;
-	position: relative;
 }
-.banner .container .table ul{
+.banner .container .table .list{
+	margin-top: 25px;
+}
+.banner .container .table .list .list_1 .card{
+	height: 460px;
+	background: white;
 	position: absolute;
-	top: 25px;
-	left: 0;
+	display: none;
+	top: 0;
+	left: 233px;
+	z-index: 999;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+
 }
-.banner .container .table ul li:hover{
+.banner .container .table .list .list_1 .card  ul{
+	width: 248px;
+	height: 100%;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.banner .container .table .list .list_1 .card  li{
+	width:100% ;
+	height: 76px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+}
+.banner .container .table .list .list_1:hover{
 	background: #ff6700;
 }
-.banner .container .table ul li a{
-	display: block;
-	width: 100%;
+.banner .container .table .list .list_1 a{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: calc(100% - 30px);
 	height: 100%;
 	font-size: 14px;
 	line-height: 40px;
 	color: white;
 	margin-left: 31px;
+
+
 }
-.banner .container .table ul li a i{
-	position: absolute;
-	top: 0;
-	right:25px;
+.banner .container .table .list .list_1 a i{
+	display: block;
+	margin-right: 24px;
 }
 .act{
 	width: 100%;
@@ -505,26 +520,23 @@ input:focus{
 	font-size: 21px;
 	line-height: 62px;
 }
-.buy .top .right a{
-	display: block;
+.buy .top .right ul li{
 	width: 36px;
     height: 24px;
     float: right;
     border: 1px solid #e0e0e0;
     margin-top: 45px;
     text-align: center;
-}
-.buy .top .right a .icon-youjiantou1{
-	color: #b0b0b0;
-	font-size: 13px;
-    line-height: 24px;
-}
-.buy .top .right a .icon-zhiyuanfanhui7{
-	font-size: 13px;
-    line-height: 24px;
+	font-size: 12px;
+	line-height: 24px;
 	color: #E0E0E0;
 }
-.buy .top .right .first:hover .icon-youjiantou1{
+.buy .top .right  .active{
+	font-size: 12px;
+    line-height: 24px;
+	color: #b0b0b0;
+}
+.buy .top .right .active:hover{
 	color: #ff6700;
 }
 .buy .bottom .left{
@@ -533,6 +545,17 @@ input:focus{
 	margin-right: 12px;
 	float: left;
 	border-top: 1px solid #E53935;
+}
+.buy .bottom .trans{
+	width: 979px;
+	height: 339px;
+	float: left;
+	overflow: hidden;
+}
+.buy .bottom ul{
+	width: 1958px;
+	height:339px;
+	transition: transform.5s;
 }
 .buy .bottom ul li{
 	width: 232px;
@@ -550,6 +573,16 @@ input:focus{
 	border-top: 1px solid #2196F3;
 }
 .buy .bottom ul li:nth-child(4){
+	margin-right: 0;
+	border-top: 1px solid #E53935;
+}
+.buy .bottom ul li:nth-child(6){
+	border-top: 1px solid #83C44E;
+}
+.buy .bottom ul li:nth-child(7){
+	border-top: 1px solid #2196F3;
+}
+.buy .bottom ul li:nth-child(8){
 	margin-right: 0;
 	border-top: 1px solid #E53935;
 }
@@ -923,37 +956,34 @@ input:focus{
 	font-size: 21px;
 	line-height: 62px;
 }
-.recommend .top .right a{
-	display: block;
+.recommend .container .top .right ul li{
 	width: 36px;
-    height: 24px;
-    float: right;
-    border: 1px solid #e0e0e0;
-    margin-top: 45px;
-    text-align: center;
-}
-.recommend .top .right a .icon-youjiantou1{
-	color: #b0b0b0;
-	font-size: 13px;
-    line-height: 24px;
-}
-.recommend .top .right a .icon-zhiyuanfanhui7{
-	font-size: 13px;
-    line-height: 24px;
+	height: 24px;
+	float: right;
+	border: 1px solid #e0e0e0;
+	margin-top: 45px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 24px;
 	color: #E0E0E0;
 }
-.recommend .top .right .first:hover .icon-youjiantou1{
-	color: #ff6700;
+.recommend .container .top .right  .active{
+	font-size: 12px;
+	line-height: 24px;
+	color: #b0b0b0;
 }
-.recommend .container .top .right input{
-	width: 37px;
-	height: 24px;
-	background: white;
-	border: 1px solid #E0E0E0;
+.recommend .container .top .right .active:hover{
+	color: #ff6700;
 }
 .recommend .container .bottom{
 	width: 100%;
 	height:300px;
+	overflow: hidden;
+}
+.recommend .container .bottom ul{
+	width: 4900px;
+	height: 300px;
+	transition: transform.5s;
 }
 .recommend .container .bottom ul li{
 	width: 237px;
@@ -969,6 +999,15 @@ input:focus{
 	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 .recommend .container .bottom ul li:nth-child(5){
+	margin-right:0;
+}
+.recommend .container .bottom ul li:nth-child(10){
+	margin-right:0;
+}
+.recommend .container .bottom ul li:nth-child(15){
+	margin-right:0;
+}
+.recommend .container .bottom ul li:nth-child(20){
 	margin-right:0;
 }
 .recommend .container .bottom ul li img{
