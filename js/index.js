@@ -1,4 +1,5 @@
  window.onload=function () {
+    // 轮播图效果开始
      let images=document.querySelectorAll(".imges");
      let dots=document.querySelectorAll(".banner .container .circle li");
      let leftbtn=document.querySelectorAll(".banner .container .left")[0];
@@ -7,7 +8,7 @@
      let now=0;
      let flag=true;
      let t=setInterval(move,2000);
-//向右移
+    //向右移
      function move() {
          now++;
          if (now==images.length){
@@ -21,7 +22,7 @@
          images[now].style.opacity=1;
          dots[now].classList.add("dots");
      }
-//向左移
+    //向左移
      function movel() {
          now--;
          if (now==-1){
@@ -35,7 +36,7 @@
          images[now].style.opacity=1;
          dots[now].classList.add("dots");
      }
-//单击轮播点
+    //单击轮播点
      for (let j=0;j<dots.length;j++){
          dots[j].onclick=function () {
              for (let i=0;i<dots.length;i++){
@@ -47,7 +48,7 @@
              now=j;
          }
      }
-//左按键
+    //左按键
      leftbtn.onclick=function () {
          if (!flag){
              return;
@@ -55,7 +56,7 @@
          flag=false;
          movel();
      }
-//右按键
+    //右按键
      rightbtn.onclick=function () {
          if (!flag){
              return;
@@ -69,7 +70,8 @@
      banners.onmouseout =function(){
          t=setInterval(move,2000);
      }
-//封装函数
+     //轮播图效果结束
+    //封装下方轮播效果函数
      function banner(imgs,dots,leftBtn,rightBtn,widths,active) {
          let now=0;
          let next=0;
@@ -158,6 +160,7 @@
              }
          }
      }
+     //调用下方轮播函数
      let contacts=document.querySelectorAll(".main .container .bottom ul .first .contact_1");
      let dot=document.querySelectorAll(".main .container .bottom ul .first .dot .circle");
      let lBtn=document.querySelector(".main .container .bottom ul .first .left");
@@ -182,7 +185,8 @@
      let rBtn3=document.querySelector(".main .container .bottom ul .fourth .right");
      let wids3=parseInt(getComputedStyle(contacts3[0],null).width);
      banner(contacts3,dot3,lBtn3,rBtn3,wids3,"circles") ;
-//小米闪购
+     //下方轮播结束
+    //小米闪购
      let btn=document.querySelectorAll(".buy .top .right ul li");
      let lists=document.querySelector(".buy .bottom ul");
      let widths=parseInt(getComputedStyle(lists,null).width)/2;
@@ -205,7 +209,8 @@
          btn[0].classList.add("active");
          lists.style.transform=`translate(${(-widths*times)}px)`;
      }
-//为你推荐
+     //小米闪购结束
+    //为你推荐
      let btn1=document.querySelectorAll(".recommend .container .top .right ul li");
      let lists1=document.querySelector(".recommend .container .bottom ul");
      let widths1=parseInt(getComputedStyle(lists1,null).width)/4;
@@ -238,6 +243,7 @@
          }
          lists1.style.transform=`translate(${(-widths1*times1)}px)`;
      }
+     // 为你推荐结束
     //购物车
      let shops=document.querySelector(".title .container .right .shop");
      let nones=document.querySelector(".title .container .right .shop .none");
@@ -251,6 +257,7 @@
          shops.style.background="#424242";
          shops.style.color="#B0B0B0";
      }
+     // 购物车下拉结束
      //轮播图选项卡
      // 1.获取元素
      let lis = document.querySelectorAll(".banner .container .table .list .list_1");
@@ -273,5 +280,44 @@
              }
          }
      }
+     //轮播图选项卡结束
+     //返回顶部
+     let back=document.querySelector(".goback");
+     back.onclick=function () {
+         document.body.scrollTop=0;
+         document.documentElement.scrollTop=0;
+     }
+     window.onscroll=function () {
+         let heights=document.body.scrollTop||document.documentElement.scrollTop;
+         if (heights>1500) {
+             back.style.display="block";
+         }else if(heights<1500){
+             back.style.display="none";
+         }
+
+     }
+     //返回顶部结束
+     //家电选项卡
+     // 1.获取元素
+     let as = document.querySelectorAll(".elec .container .top .right a");
+     let child = document.querySelectorAll(".elec .container .bottom .right");
+     console.log(as,child);
+     child[0].style.display="flex";
+     as[0].className="action";
+     // 2.遍历每个li
+     for (let i = 0; i < as.length; i++) {
+         // 3.当鼠标移入每个li时的操作
+         as[i].onmouseover = function () {
+             // 4.其余子元素消失
+             for (let j = 0; j < child.length; j++) {
+                 child[j].style.display = "none";
+                 as[j].classList.remove("action");
+             }
+             // 5.当前子元素出现
+             child[i].style.display="flex";
+             as[i].className="action";
+         }
+     }
+     //家电选项卡结束
  }
 
