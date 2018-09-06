@@ -219,28 +219,25 @@
          times1++;
          if (times1==3) {
              btn1[0].classList.remove("active");
-             btn1[1].classList.add("active");
+
          }
          if (times1===4){
              times1=3;
              return;
          }
+         btn1[1].classList.add("active");
          lists1.style.transform=`translate(${(-widths1*times1)}px)`;
      }
      btn1[1].onclick=function () {
          times1--;
          if (times1==0) {
-             btn1[0].classList.add("active");
              btn1[1].classList.remove("active");
          }
          if (times1===-1){
              times1=0;
              return;
          }
-         if (times1==0) {
-             btn1[0].classList.add("active");
-             btn1[1].classList.remove("active");
-         }
+         btn1[0].classList.add("active");
          lists1.style.transform=`translate(${(-widths1*times1)}px)`;
      }
      // 为你推荐结束
@@ -301,7 +298,6 @@
      // 1.获取元素
      let as = document.querySelectorAll(".elec .container .top .right a");
      let child = document.querySelectorAll(".elec .container .bottom .right");
-     console.log(as,child);
      child[0].style.display="flex";
      as[0].className="action";
      // 2.遍历每个li
@@ -319,5 +315,18 @@
          }
      }
      //家电选项卡结束
+     //右侧固定栏
+     let message=document.querySelectorAll(".sort ul li .message");
+     let is=document.querySelectorAll(".sort ul li");
+     for (let i=0;i<is.length;i++){
+         is[i].onmouseenter=function () {
+            message[i].style.display="block";
+         }
+         is[i].onmouseleave=function () {
+             message[i].style.display="none";
+         }
+     }
+
+     //右侧固定栏结束
  }
 
