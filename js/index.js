@@ -326,7 +326,39 @@
              message[i].style.display="none";
          }
      }
-
      //右侧固定栏结束
+     //闪购倒计时
+     //倒计时
+     function djs(spans){
+         setInterval(setDate,1000);
+         function setDate(){
+             let arr=fn();
+             spans.forEach((v,index)=>{
+                 v.innerHTML=arr[index];
+             })
+         }
+         function fn() {
+             let arr = [];
+             let now = new Date();
+             let future = new Date(2018,9,1,18,0,0);
+             let time = Math.floor((future.getTime() - now.getTime()) / 1000);
+
+             //月
+             // let month = Math.floor(time / (30 * 24 * 60 * 60));
+             // arr.push(month);
+             // let day = Math.floor(time % (30 * 24 * 60 * 60) / (24 * 60 * 60));
+             // arr.push(day);
+             let hour = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) / (60 * 60));
+             arr.push(hour);
+             let m = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) % (60 * 60) / (60));
+             arr.push(m);
+             let s = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) % (60 * 60) % (60));
+             arr.push(s);
+
+             return arr;
+         }
+     }
+     let spans=document.querySelectorAll(".buy .bottom .left .coun .box");
+     djs(spans);
  }
 
